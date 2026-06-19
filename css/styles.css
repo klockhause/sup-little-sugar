@@ -320,7 +320,7 @@ p:last-child {
   align-items: center;
   /* Gradient fallback — shown if image fails or while loading */
   background: linear-gradient(160deg, #0288d1 0%, #01579b 50%, #1a3a2a 100%);
-  background-image: url('../images/Victor_Back_Standing_Up.jpeg');
+  background-image: url('../images/Hero_Photo_Victor.jpeg');
   background-size: cover;
   background-position: center top;
   color: #fff;
@@ -552,6 +552,89 @@ p:last-child {
   padding-top: 1.25rem;
   border-top: 1px solid var(--border);
   line-height: 1.6;
+}
+
+/* Flow level legend (sits between status card and explainer) */
+.flow-legend {
+  background: #f4f4f2;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.flow-legend-context {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+
+/* Mobile: stacked list */
+.flow-legend-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Desktop: horizontal row */
+@media (min-width: 600px) {
+  .flow-legend-levels {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.3rem;
+  }
+}
+
+.flow-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+
+@media (min-width: 600px) {
+  .flow-legend-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    flex: 1;
+    padding: 0.5rem 0.65rem;
+  }
+}
+
+/* Ideal range is slightly more prominent */
+.flow-legend-item--ideal {
+  background: rgba(15, 157, 88, 0.07);
+  outline: 1px solid rgba(15, 157, 88, 0.22);
+}
+
+.flow-legend-item--ideal .flow-legend-range,
+.flow-legend-item--ideal .flow-legend-label {
+  color: var(--text);
+}
+
+.flow-legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.flow-legend-range {
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  font-size: 0.78rem;
+}
+
+.flow-legend-label {
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.35;
 }
 
 /* ============================================================

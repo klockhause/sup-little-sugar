@@ -104,6 +104,38 @@
 
       </div><!-- /status-card -->
 
+      <!-- Flow level legend -->
+      <div class="flow-legend">
+        <p class="flow-legend-context">Current conditions are one data point — use the full range below to understand where today's level falls.</p>
+        <div class="flow-legend-levels">
+          <div class="flow-legend-item">
+            <span class="flow-legend-dot" style="background:#9e9e9e;"></span>
+            <span class="flow-legend-range">Below 1.7 ft</span>
+            <span class="flow-legend-label">Too Low — not enough water</span>
+          </div>
+          <div class="flow-legend-item">
+            <span class="flow-legend-dot" style="background:#c8a800;"></span>
+            <span class="flow-legend-range">1.7 – 1.9 ft</span>
+            <span class="flow-legend-label">Marginal — may drag in spots</span>
+          </div>
+          <div class="flow-legend-item flow-legend-item--ideal">
+            <span class="flow-legend-dot" style="background:#0f9d58;"></span>
+            <span class="flow-legend-range">1.9 – 2.5 ft</span>
+            <span class="flow-legend-label">Ideal — perfect for all levels</span>
+          </div>
+          <div class="flow-legend-item">
+            <span class="flow-legend-dot" style="background:#c8a800;"></span>
+            <span class="flow-legend-range">2.5 – 3.0 ft</span>
+            <span class="flow-legend-label">Elevated — more current, use judgment</span>
+          </div>
+          <div class="flow-legend-item">
+            <span class="flow-legend-dot" style="background:#d32f2f;"></span>
+            <span class="flow-legend-range">Above 3.0 ft</span>
+            <span class="flow-legend-label">Do Not Float — stay off the creek</span>
+          </div>
+        </div>
+      </div><!-- /flow-legend -->
+
       <p class="conditions-explainer">
         Flow is measured at the USGS gauge station on Little Sugar Creek. Gauge height in feet is the primary indicator for floatability — not volume. Data updates approximately every 15 minutes. Ideal range is <strong>1.9–2.5 ft</strong>. Above <strong>3.0 ft</strong>, stay off the water.
       </p>
@@ -401,8 +433,9 @@
       <h2 class="section-heading">On the Water</h2>
 
       <!--
-        3 gallery photos (hero image Victor_Back_Standing_Up.jpeg is excluded).
-        Using masonry layout — 3 photos meets the threshold.
+        7 gallery photos. Hero (Hero_Photo_Victor.jpeg) excluded.
+        Victor_Back_Standing_Up.jpeg released from old hero slot and added here.
+        New additions: Nat_Back_Standing_Floating_by-Tree, Standing_Back_Floating_Under_Bridge, Victor_Andy_Beach_Side.
       -->
       <div class="gallery-masonry">
         <img
@@ -418,6 +451,26 @@
         <img
           src="images/Andy_Under_Tree_Standing_Shoes.jpeg"
           alt="A paddler standing on a SUP board on Little Sugar Creek"
+          loading="lazy"
+        />
+        <img
+          src="images/Victor_Back_Standing_Up.jpeg"
+          alt="A paddler standing up on a SUP board on Little Sugar Creek"
+          loading="lazy"
+        />
+        <img
+          src="images/Nat_Back_Standing_Floating_by-Tree.jpeg"
+          alt="A paddler standing on a SUP board floating past trees on Little Sugar Creek"
+          loading="lazy"
+        />
+        <img
+          src="images/Standing_Back_Floating_Under_Bridge.jpeg"
+          alt="A paddler standing on a SUP board floating under a bridge on Little Sugar Creek"
+          loading="lazy"
+        />
+        <img
+          src="images/Victor_Andy_Beach_Side.jpeg"
+          alt="Two paddlers together on the shore of Little Sugar Creek"
           loading="lazy"
         />
       </div>
@@ -521,7 +574,7 @@
 
       /* Determine status from gauge height (in feet) */
       function classify(ft) {
-        if (ft < 1.5) {
+        if (ft < 1.7) {
           return {
             status: 'low',
             label:  '🪨 Too Low',
