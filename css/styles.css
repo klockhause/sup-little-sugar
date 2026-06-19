@@ -852,6 +852,7 @@ p:last-child {
 .float-wrap {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
+  overflow-x: hidden; /* prevent horizontal scroll on mobile */
 }
 
 .float-grid {
@@ -866,10 +867,16 @@ p:last-child {
   }
 }
 
+.float-item {
+  min-width: 0; /* prevent grid blowout on mobile */
+  overflow-wrap: break-word;
+}
+
 .float-item h3 {
   font-size: 1.05rem;
   margin-bottom: 0.5rem;
   color: var(--text);
+  word-break: break-word;
 }
 
 .float-item p {
@@ -982,10 +989,12 @@ p:last-child {
 .about-wrap {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+  overflow-x: hidden; /* prevent horizontal scroll on mobile */
 }
 
 .about-content {
   max-width: 680px;
+  overflow-wrap: break-word;
 }
 
 .about-content p {
